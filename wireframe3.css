@@ -1,19 +1,73 @@
-body {
-    font-family: Geologica, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+:root {
+    --primary: #777;
+    --secondary: #aaa;
+    --light: #eee;
+    --bright: #fff;
+    --shimmer: #999;
 }
+
+body {
+    font-family: Geologica, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body>* {}
+
+header,
+footer {
+    background-color: var(--light);
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 main {
     display: flex;
     flex-direction: column;
+
+    &>* {
+        padding: 1rem 5rem;
+    }
 }
 
 .wireframe {
-    text-transform: uppercase; 
-    letter-spacing: 0.5rem; 
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.wireframe-header {
+    width: 50%;
+    background-color: var(--shimmer);
+    text-align: center;
+    padding: 1rem 0;
 }
 
 .intro {
-    background-color: #aaa;
-    height: 10rem;
+    background: linear-gradient(70deg, var(--light), var(--primary));
+    height: 19rem;
+    overflow: hidden;
+
+    & .title {
+        display: none;
+        place-items: center;
+
+        div {
+            color: var(--bright);
+            font-size: 10rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    & img {
+        /* filter: blur(0.5rem); */
+        mix-blend-mode: multiply;
+        width: 150%;
+    }
 }
 
 .testimonials {
@@ -35,12 +89,48 @@ main {
         }
     }
 }
+
+.suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .centred {
-    text-align: center; 
+    text-align: center;
     font-size: 2rem;
 
- 
+
 }
+
 .artists {
-    display: flex; 
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+
+    & .artist {
+        display: flex;
+        flex-direction: column;
+
+        font-size: 1rem;
+        color: var(--primary);
+
+        & img {
+            /* width: 100%; */
+            aspect-ratio: 1;
+            background-color: var(--secondary);
+            /* object-fit: cover; */
+        }
+
+        & label {
+            /* position: absolute; */
+            /* text-overflow: wrap; */
+        }
+
+        & .name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
 }
